@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    {{include "base/head.html"}}
+    <title>{{i18n .Lang "homepage"}} - xorm: {{i18n .Lang "app_intro"}}</title>
+    <link rel="stylesheet" href="/css/markdown.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/prettify.css" />
+    <link rel="stylesheet" href="/css/select2.css" />
+    </head>
+    <body>
+<div class="main-header">
+{{include "base/navbar.html"}}
+{{define "docs"}}
+    {{with .Doc}}
+        {{range .Docs}}
+            <ul class="list-unstyled">
+                {{if .Name}}
+                    {{ if .IsDir}}
+                        <li class="group">
+                            <div class="section">
+                            {{if .HasContent}}
+                                <a class="{{if eq $.root.T.Doc.Link .Link}}active{{end}} item" href="/docs/{{.Link}}">{{.Name}}</a>
+                            {{else}}
+                                {{.Name}}
+                            {{end}}
+                            </div>
+                            {{template "docs" dict "root" $.root "Doc" .}}
+                        </li>
+                    {{else}}
+                        <li><a class="{{if eq $.root.T.Doc.Link .Link}}active{{end}} item" href="/docs/{{.Link}}">{{.Name}}</a></li>
+                    {{end}}
+                {{end}}
+            </ul>
+        {{end}}
+    {{end}}
+{{end}}
+<div class="container main-container">
+    <div class="row">
+        <div class="col-md-2 col-sm-3">
+            <div id="docs-collapse" class="collapse navbar-collapse docs-sidenav">
+                {{with .T.DocRoot.Doc}}
+                    {{if .HasContent}}
+                        <div class="section"><a class="{{if eq $.T.Doc.Link .Link}}active{{end}} item" href="/docs">{{.Name}}</a></div>
+                    {{end}}
+                    {{template "docs" dict "root" $ "Doc" .}}
+                {{end}}
+            </div>
+        </div>
+        <div class="col-md-10 col-sm-9">
+            <div class="box">
+                <div class="cell slim page-box">
+                    <p>
+                        <a href="https://github.com/gogits/docs/blob/master/{{.Lang}}/{{if .T.Doc.IsDir}}{{.T.Doc.FileRelPath}}{{else}}{{.Doc.RelPath}}{{end}}" class="pull-right btn btn-info" target="_blank">{{i18n .Lang "improve doc on github"}}</a>
+                        <span class="clearfix"></span>
+                    </p>
+                    <div class="markdown docs-markdown">
+                        {{.T.Data|Html}}
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var disqus_url = 'http://beego.me/docs/' + '{{.T.Doc.Link}}?lang={{.Lang}}';
+            </script>
+            {{include "base/disqus.html"}}
+        </div>
+    </div>
+</div>
+{{include "base/footer.html"}}
+</body>
+</html>

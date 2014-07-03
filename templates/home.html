@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    {{include "base/head.html"}}
+    <title>{{i18n .Lang "homepage"}} - xorm: {{i18n .Lang "app_intro"}}</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/base.css">
+    </head>
+    <body>
+<div class="main-header">
+{{include "base/navbar.html"}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title">
+                    Xorm - eXcellent ORM for Go
+                </div>
+                <div class="desc">
+                    {{i18n .Lang "home.gogs_desc"}}
+                </div>
+                <div class="actions">
+                    <a href="/docs/intro/" class="btn btn-lg btn-info">{{i18n .Lang "learn more"}}</a>
+                    <a href="http://try.gogits.org" class="btn btn-lg btn-success">{{i18n .Lang "try_now"}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row home-box">
+        <div class="col-md-8">
+            <h2>{{i18n .Lang "home.quick_start"}}</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="markdown">
+                        {{if eq .Lang "zh-CN"}}
+                            <p>在安装 Gogs 之前，您需要先安装 <a href="/docs/installation/">Prerequirements</a>。</p>
+                            <p>下载安装：</p>
+                            <ul>
+                                <li><a href="/docs/installation/install_from_binary.md">二进制安装</a></li>
+                                <li><a href="/docs/installation/install_from_source.md">源码安装</a></li>
+                                <li><a href="/docs/installation/install_from_packages.md">包管理安装</a></li>
+                                <li><a href="https://github.com/gogits/gogs/tree/master/dockerfiles">采用 Docker 部署</a></li>
+                                <li><a href="https://github.com/geerlingguy/ansible-vagrant-examples/tree/master/gogs">通过 Vagrant 安装</a></li>
+                            </ul>
+                            <p>您也可以直接进行 <a href="http://try.gogits.org">在线体验</a>。</p>
+                        {{else}}
+                            <p>Make sure you install <a href="/docs/installation/">Prerequirements</a> first.</p>
+                            <p>Download and install:</p>
+                            <ul>
+                                <li><a href="/docs/installation/install_from_binary.md">Install from binary</a></li>
+                                <li><a href="/docs/installation/install_from_source.md">Install from source</a></li>
+                                <li><a href="/docs/installation/install_from_packages.md">Install from packages</a></li>
+                                <li><a href="https://github.com/gogits/gogs/tree/master/dockerfiles">Ship with Docker</a></li>
+                                <li><a href="https://github.com/geerlingguy/ansible-vagrant-examples/tree/master/gogs">Install with Vagrant</a></li>
+                            </ul>
+                            <p>Or just try it <a href="http://try.gogits.org">online</a>.</p>
+                        {{end}}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="markdown">
+                        {{if eq .Lang "zh-CN"}}
+                            <p>运行及初始化：</p>
+                            <ol>
+                                <li>执行命令 <code>./gogs web</code></li>
+                                <li>访问页面 <code>http://localhost:3000/install</code></li>
+                            </ol>
+                            <p>恭喜！您已经成功地运行了 Gogs。</p>
+                            <p>请阅读 <a href="/docs">使用手册</a> 以获取更多信息。</p>
+                        {{else}}
+                            <p>Run and setup:</p>
+                            <ol>
+                                <li>Execute <code>./gogs web</code></li>
+                                <li>Visit <code>http://localhost:3000/install</code></li>
+                            </ol>
+                            <p>Congratulations! You just get your Gogs running.</p>
+                            <p>Please see <a href="/docs">Documentation</a> for going further.</p>
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="home-box">
+                <h2>{{i18n .Lang "home.further_reading"}}</h2>
+                <div class="well markdown">
+                    <ul class="list-unstyled">
+                        {{if eq .Lang "zh-CN"}}
+                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/faqs.md">常见问题</a></li>
+                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/known_issues.md">已知问题</a></li>
+                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/troubleshooting.md">故障排查</a></li>
+                            <li><i class="icon-angle-right"></i> <a href="/docs/advanced/configuration_cheat_sheet.md">配置文件手册</a></li>
+                            <li><i class="icon-angle-right"></i> <a href="/docs/advanced/release_and_tips_blogs.md">公告与高阶指南</a></li>
+                        {{else}}
+                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/faqs.md">FAQs</a></li>
+                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/known_issues.md">Known issues</a></li>
+                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/troubleshooting.md">Troubleshooting</a></li>
+                            <li><i class="icon-angle-right"></i> <a href="/docs/advanced/configuration_cheat_sheet.md">Configuration Cheat Sheet</a></li>
+                            <li><i class="icon-angle-right"></i> <a href="/docs/advanced/release_and_tips_blogs.md">Release and tips blogs</a></li>
+                        {{end}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row home-box">
+        <div class="col-md-12">
+            <h2>{{i18n .Lang "home.features"}}</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="feature">
+                        <h3 class="title">
+                            {{if eq .Lang "zh-CN"}}
+                                易安装
+                            {{else}}
+                                EASY TO INSTALL
+                            {{end}}
+                        </h3>
+                        <p class="content">
+                            {{if eq .Lang "zh-CN"}}
+                                只需要一个包含二进制文件、模板文件和静态资源的 zip 包。
+                            {{else}}
+                                A zip archive contains single binary, template files and static resources are ready to go.
+                            {{end}}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature">
+                        <h3 class="title">
+                            {{if eq .Lang "zh-CN"}}
+                                跨平台
+                            {{else}}
+                                CROSS PLATFORM
+                            {{end}}
+                        </h3>
+                        <p class="content">
+                            {{if eq .Lang "zh-CN"}}
+                                由于没有使用任何 cgo 的代码，Gogs 支持所有 Go 语言支持的平台。
+                            {{else}}
+                                Without any cgo usage, Gogs supports all platforms that Go supports.
+                            {{end}}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature">
+                        <h3 class="title">
+                            {{if eq .Lang "zh-CN"}}
+                                轻量级
+                            {{else}}
+                                LIGHTWEIGHT
+                            {{end}}
+                        </h3>
+                        <p class="content">
+                            {{if eq .Lang "zh-CN"}}
+                                一个廉价的树莓派的配置就是最低的系统硬件要求。
+                            {{else}}
+                                A cheap Raspberry Pi is powerful enough to match the minimal requirement.
+                            {{end}}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature">
+                        <h3 class="title">
+                            {{if eq .Lang "zh-CN"}}
+                                开源化
+                            {{else}}
+                                OPEN SOURCE
+                            {{end}}
+                        </h3>
+                        <p class="content">
+                            {{if eq .Lang "zh-CN"}}
+                                通过加入我们来参与、分享和学习，并成为一个贡献者。
+                            {{else}}
+                                Join, share and learn by involving this great project and be a contributor.
+                            {{end}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row home-box">
+        <div class="col-md-12">
+            <h2>{{i18n .Lang "home.who_are_use"}}</h2>
+            <div class="whouse">
+                <a target="_blank" href="http://gogs.io/"><img class="img-thumbnail" src="/img/favicon.png"/></a>
+                <a target="_blank" href="http://sudochina.com/"><img class="img-thumbnail" src="/img/brands/sudochina.jpg"/></a>
+            </div>
+        </div>
+    </div>
+</div>
+{{include "base/footer.html"}}
+</body>
+</html>
