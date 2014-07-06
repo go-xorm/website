@@ -20,7 +20,6 @@ import (
 	"time"
 
 	"github.com/Unknwon/i18n"
-	"github.com/go-xweb/log"
 	"github.com/go-xweb/xweb"
 )
 
@@ -118,8 +117,6 @@ func (this *baseAction) setLangVer() bool {
 		cookie := xweb.NewCookie("lang", curLang.Lang, 1<<31-1)
 		this.SetCookie(cookie)
 	}
-
-	log.Info(langTypes)
 
 	restLangs := make([]*langType, 0, len(langTypes)-1)
 	for _, v := range langTypes {

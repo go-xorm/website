@@ -1,21 +1,38 @@
-{{template "base/base.html" .}}
-{{define "head"}}{{end}}
-{{define "meta"}}
-<title>{{.Title}} - Gogs: {{i18n .Lang "app_intro"}}</title>
-{{end}}
-{{define "body"}}
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    {{include "base/head.html"}}
+    <title>{{i18n .Lang "homepage"}} - xorm: {{i18n .Lang "app_intro"}}</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/prettify.css" />
+    <link rel="stylesheet" href="/css/select2.css" />
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/markdown.css">
+    <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body id="front">
+<div id="wrapper">
+{{include "base/navbar.html"}}
+<div id="main">
 <div class="container main-container">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="box">
 				<div class="cell slim page-box markdown">
 					<div class="page-header">
-	   				<h1>{{.Title}}</h1>
+	   				<h1>{{.T.Title}}</h1>
 					</div>
-					{{.Data | str2html}}
+					{{.T.Data | Html}}
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-{{end}}
+</div>
+{{include "base/footer.html"}}
+</div>
+</body>
+</html>

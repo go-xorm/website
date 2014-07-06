@@ -39,6 +39,10 @@ func (this *HomeAction) Get() error {
 func (this *HomeAction) About() error {
 	// Get language.
 	df := models.GetDoc("about", this.Lang)
+	if df == nil {
+		return this.NotFound("about")
+	}
+
 	return this.Render("about.html", &xweb.T{
 		"IsAbout": true,
 		"Title":   df.Title,
@@ -50,16 +54,25 @@ func (this *HomeAction) About() error {
 func (this *HomeAction) Page() error {
 	// Get language.
 	df := models.GetDoc("team", this.Lang)
+	if df == nil {
+		return this.NotFound("team")
+	}
+
 	return this.Render("team.html", &xweb.T{
 		"IsTeam":  true,
 		"Title":   df.Title,
 		"Data":    string(df.Data),
 		"Section": "team",
 	})
+
 }
 
 func (this *HomeAction) QuickStart() error {
 	df := models.GetDoc("quickstart", this.Lang)
+	if df == nil {
+		return this.NotFound("quickstart")
+	}
+
 	return this.Render("quickstart.html", &xweb.T{
 		"IsQuickStart":  true,
 		"Section":       "quickstart",
@@ -72,6 +85,9 @@ func (this *HomeAction) QuickStart() error {
 func (this *HomeAction) Donate() error {
 	// Get language.
 	df := models.GetDoc("donate", this.Lang)
+	if df == nil {
+		return this.NotFound("donate")
+	}
 
 	return this.Render("donate.html", &xweb.T{
 		"IsDonate":      true,

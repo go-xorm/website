@@ -250,13 +250,13 @@ func markdown(raw []byte) []byte {
 	return body
 }
 
-func getFile(filePath string) *docFile {
-	if strings.Contains(filePath, "images") {
+func getFile(fPath string) *docFile {
+	if strings.Contains(fPath, "images") {
 		return nil
 	}
 
 	df := &docFile{}
-	p, err := loadFile(filePath + ".md")
+	p, err := loadFile(fPath + ".md")
 	if err != nil {
 		log.Error("models.getFile -> ", err)
 		return nil
@@ -282,15 +282,16 @@ func getFile(filePath string) *docFile {
 
 // GetDoc returns 'docFile' by given name and language version.
 func GetDoc(fullName, lang string) *docFile {
-	//filePath := "docs/" + lang + "/" + fullName
+	fPath := "docs/" + lang + "/" + fullName
 
-	/*if xweb. == "dev" {
-		return getFile(filePath)
-	}*/
-
+	var doc *docFile
 	docLock.RLock()
-	defer docLock.RUnlock()
-	return docMap[lang+"/"+fullName]
+	doc = docMap[lang+"/"+fullName]
+	docLock.RUnlock()
+	if doc == nil {
+		doc = getFile(fPath)
+	}
+	return doc
 }
 
 var checkTicker *time.Ticker
