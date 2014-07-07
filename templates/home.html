@@ -38,42 +38,30 @@
         <div class="col-md-8">
             <h2>{{i18n .Lang "home.quick_start"}}</h2>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <div class="markdown">
                         {{if eq .Lang "zh-CN"}}
-                            <p>在安装 Gogs 之前，您需要先安装 <a href="/docs/installation/">Prerequirements</a>。</p>
-                            <p>下载安装：</p>
-                            <ul>
-                                <li><a href="/docs/installation/install_from_binary.md">二进制安装</a></li>
-                                <li><a href="/docs/installation/install_from_source.md">源码安装</a></li>
-                                <li><a href="/docs/installation/install_from_packages.md">包管理安装</a></li>
-                                <li><a href="https://github.com/gogits/gogs/tree/master/dockerfiles">采用 Docker 部署</a></li>
-                                <li><a href="https://github.com/geerlingguy/ansible-vagrant-examples/tree/master/gogs">通过 Vagrant 安装</a></li>
-                            </ul>
-                            <p>您也可以直接进行 <a href="http://try.gogits.org">在线体验</a>。</p>
+                            <p>库安装</p>
+                            <p><code>go get github.com/go-xorm/xorm</code></p>
+                            <p>Xorm工具</p>
+                            <p><code>go get github.com/go-xorm/cmd/xorm</code></p>
                         {{else}}
-                            <p>Make sure you install <a href="/docs/installation/">Prerequirements</a> first.</p>
-                            <p>Download and install:</p>
-                            <ul>
-                                <li><a href="/docs/installation/install_from_binary.md">Install from binary</a></li>
-                                <li><a href="/docs/installation/install_from_source.md">Install from source</a></li>
-                                <li><a href="/docs/installation/install_from_packages.md">Install from packages</a></li>
-                                <li><a href="https://github.com/gogits/gogs/tree/master/dockerfiles">Ship with Docker</a></li>
-                                <li><a href="https://github.com/geerlingguy/ansible-vagrant-examples/tree/master/gogs">Install with Vagrant</a></li>
-                            </ul>
-                            <p>Or just try it <a href="http://try.gogits.org">online</a>.</p>
+                            <p>Library Installation</p>
+                            <p><code>go get github.com/go-xorm/xorm</code></p>
+                            <p>Xorm Tools Installation</p>
+                            <p><code>go get github.com/go-xorm/cmd/xorm</code></p>
                         {{end}}
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <div class="markdown">
                         {{if eq .Lang "zh-CN"}}
                             <p>运行及初始化：</p>
                             <ol>
-                                <li>执行命令 <code>./gogs web</code></li>
-                                <li>访问页面 <code>http://localhost:3000/install</code></li>
+                                <li>初始化 <code>orm, err := xorm.NewEngine("sqlite3", "./test.db")</code></li>
+                                <li>同步数据库结构 <code>err = orm.Sync(new(User), new(Article))</code></li>
                             </ol>
-                            <p>恭喜！您已经成功地运行了 Gogs。</p>
+                            <p>恭喜！您已经成功地运行了 Xorm。</p>
                             <p>请阅读 <a href="/docs">使用手册</a> 以获取更多信息。</p>
                         {{else}}
                             <p>Run and setup:</p>
@@ -93,19 +81,17 @@
                 <h2>{{i18n .Lang "home.further_reading"}}</h2>
                 <div class="well markdown">
                     <ul class="list-unstyled">
-                        {{if eq .Lang "zh-CN"}}
-                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/faqs.md">常见问题</a></li>
-                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/known_issues.md">已知问题</a></li>
-                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/troubleshooting.md">故障排查</a></li>
-                            <li><i class="icon-angle-right"></i> <a href="/docs/advanced/configuration_cheat_sheet.md">配置文件手册</a></li>
-                            <li><i class="icon-angle-right"></i> <a href="/docs/advanced/release_and_tips_blogs.md">公告与高阶指南</a></li>
-                        {{else}}
-                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/faqs.md">FAQs</a></li>
-                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/known_issues.md">Known issues</a></li>
-                            <li><i class="icon-angle-right"></i> <a href="/docs/intro/troubleshooting.md">Troubleshooting</a></li>
-                            <li><i class="icon-angle-right"></i> <a href="/docs/advanced/configuration_cheat_sheet.md">Configuration Cheat Sheet</a></li>
-                            <li><i class="icon-angle-right"></i> <a href="/docs/advanced/release_and_tips_blogs.md">Release and tips blogs</a></li>
-                        {{end}}
+                            <li><i class="icon-angle-right"></i>&nbsp;Mysql: <a href="http://github.com/go-sql-driver/mysql">github.com/go-sql-driver/mysql</a></li>
+
+                            <li><i class="icon-angle-right"></i>&nbsp;MyMysql: <a href="http://github.com/ziutek/mymysql/godrv">github.com/ziutek/mymysql/godrv</a></li>
+
+                            <li><i class="icon-angle-right"></i>&nbsp;SQLite: <a href="http://github.com/mattn/go-sqlite3">github.com/mattn/go-sqlite3</a></li>
+
+                            <li><i class="icon-angle-right"></i>&nbsp;Postgres: <a href="http://github.com/lib/pq">github.com/lib/pq</a></li>
+
+                            <li><i class="icon-angle-right"></i>&nbsp;MsSql:<a href="http://github.com/denisenkom/go-mssqldb"> github.com/denisenkom/go-mssqldb</a></li>
+
+                            <li><i class="icon-angle-right"></i>&nbsp;MsSql: <a href="http://github.com/lunny/godbc">github.com/lunny/godbc</a></li>
                     </ul>
                 </div>
             </div>
@@ -121,16 +107,16 @@
                     <div class="feature">
                         <h3 class="title">
                             {{if eq .Lang "zh-CN"}}
-                                易安装
+                                少依赖
                             {{else}}
-                                EASY TO INSTALL
+                                LESS DEPENDENCY
                             {{end}}
                         </h3>
                         <p class="content">
                             {{if eq .Lang "zh-CN"}}
-                                只需要一个包含二进制文件、模板文件和静态资源的 zip 包。
+                                xorm除了依赖github.com/go-xorm/core之外不依赖其它第三方库。
                             {{else}}
-                                A zip archive contains single binary, template files and static resources are ready to go.
+                                Only depends github.com/go-xorm/core.
                             {{end}}
                         </p>
                     </div>
@@ -139,16 +125,16 @@
                     <div class="feature">
                         <h3 class="title">
                             {{if eq .Lang "zh-CN"}}
-                                跨平台
+                                易使用
                             {{else}}
-                                CROSS PLATFORM
+                                EASY USAGE
                             {{end}}
                         </h3>
                         <p class="content">
                             {{if eq .Lang "zh-CN"}}
-                                由于没有使用任何 cgo 的代码，Gogs 支持所有 Go 语言支持的平台。
+                                通过连写操作，可以通过很少的语句完成数据库操作。
                             {{else}}
-                                Without any cgo usage, Gogs supports all platforms that Go supports.
+                                By join function design, use less codes to finish DB operations.
                             {{end}}
                         </p>
                     </div>
@@ -157,16 +143,16 @@
                     <div class="feature">
                         <h3 class="title">
                             {{if eq .Lang "zh-CN"}}
-                                轻量级
+                                功能全
                             {{else}}
-                                LIGHTWEIGHT
+                                RICH FUNCTIONS
                             {{end}}
                         </h3>
                         <p class="content">
                             {{if eq .Lang "zh-CN"}}
-                                一个廉价的树莓派的配置就是最低的系统硬件要求。
+                                支持缓存，事务，乐观锁，多种数据库支持，反转等等特性。
                             {{else}}
-                                A cheap Raspberry Pi is powerful enough to match the minimal requirement.
+                                Support cache, transaction, Optimistic Lock, Multiple Database support, Reverse and tect.
                             {{end}}
                         </p>
                     </div>

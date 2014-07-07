@@ -45,7 +45,7 @@
 
 .home-box h2 {
   margin-top: 0;
-  color: #f04c5c;
+  color: #6600CC;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
   border-bottom: 1px solid #DDD;
   margin: 15px 0;
@@ -67,6 +67,7 @@
 }
 
 .home-box .feature .title {
+  color: #f04c5c;
   margin: 20px 0 0;
   font-size: 18px;
 }
