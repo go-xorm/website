@@ -2,16 +2,11 @@
 *.exe~
 website
 .DS_Store
-bee
-/docs
 /blog
 /products
 docTree.json
 blogTree.json
 productTree.json
-gogsweb
 /log
-bale/
-bale.go
 *.go~
 conf/custom.ini
