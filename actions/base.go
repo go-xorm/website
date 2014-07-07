@@ -45,6 +45,8 @@ type baseAction struct {
 
 // Prepare implemented Prepare method for baseRouter.
 func (this *baseAction) Init() {
+	this.start = time.Now()
+
 	// Setting properties.
 	this.AddTmplVars(&xweb.T{
 		"AppVer":        AppVer,
@@ -54,8 +56,6 @@ func (this *baseAction) Init() {
 			return int64(time.Now().Sub(this.start) / time.Millisecond)
 		},
 	})
-
-	this.start = time.Now()
 
 	// Redirect to make URL clean.
 	if this.setLangVer() {
@@ -77,7 +77,7 @@ func (this *baseAction) setLangVer() bool {
 	if len(lang) == 0 {
 		cookie, _ := this.GetCookie("lang")
 		if cookie != nil {
-			lang = cookie.String()
+			lang = cookie.Value
 			hasCookie = true
 		}
 	} else {

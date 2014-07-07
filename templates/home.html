@@ -66,10 +66,10 @@
                         {{else}}
                             <p>Run and setup:</p>
                             <ol>
-                                <li>Execute <code>./gogs web</code></li>
-                                <li>Visit <code>http://localhost:3000/install</code></li>
+                                <li>Init orm <code>orm, err := xorm.NewEngine("sqlite3", "./test.db")</code></li>
+                                <li>Sync database structs <code>err = orm.Sync(new(User), new(Article))</code></li>
                             </ol>
-                            <p>Congratulations! You just get your Gogs running.</p>
+                            <p>Congratulations! You just get your Xorm running.</p>
                             <p>Please see <a href="/docs">Documentation</a> for going further.</p>
                         {{end}}
                     </div>

@@ -16,10 +16,10 @@ const (
 func main() {
 	models.InitModels()
 
-	mode, _ := models.Cfg.GetValue("mode", "debug")
-	if mode == "debug" {
-		log.SetOutputLevel(log.Ldebug)
-	}
+	/*mode, _ := models.Cfg.GetValue("mode", "debug")
+	if mode == "debug" {*/
+	log.SetOutputLevel(log.Ldebug)
+	//}
 
 	actions.InitApp()
 

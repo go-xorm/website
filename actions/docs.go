@@ -15,6 +15,7 @@
 package actions
 
 import (
+	"fmt"
 	"github.com/go-xweb/xweb"
 
 	"github.com/go-xorm/website/models"
@@ -29,6 +30,7 @@ type DocsAction struct {
 
 // Get implemented Get method for DocsRouter.
 func (this *DocsAction) Get(link string) error {
+	fmt.Println("lang:", this.Lang)
 	dRoot := models.GetDocByLocale(this.Lang)
 	if dRoot == nil {
 		return this.NotFound("Not Found Your Language")
