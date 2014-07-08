@@ -35,6 +35,7 @@
 
 | 捐赠时间      | 捐赠人     | 金额    | 联系方式      | 附言                     |
 | ---------------- |:---------:| --------:|:---------:| ----------------------- |
+|2014-7-8 | Steven Wang     | 100￥   | easykooc@gmail.com | xorm目前做得最好的orm for golang |
 |2014-7-8 | 韩天峰     | 20￥   | apolov@vip.qq.com | xorm是Golang里最好用的DB库 |
 |2014-7-8 | sunhongjian     | 100￥   | shongjiang@gmail.com    |支持开源，支持美好的事物！  |
 |2014-7-8 | Jimmy Kuu     | 200￥   | jimmy.kuu@gmail.com    |再接再厉，持续发展  |
