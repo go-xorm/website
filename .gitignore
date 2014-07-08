@@ -10,3 +10,4 @@ productTree.json
 /log
 *.go~
 conf/custom.ini
+output*
