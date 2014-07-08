@@ -29,6 +29,7 @@
 
 | Donated at       | Donator    | Amount   | Contact   | Comments               |
 | ---------------- |:---------:| --------:|:---------:| ----------------------- |
+|2014-7-8 | sunhongjian     | 100￥   | shongjiang@gmail.com    |支持开源，支持美好的事物！  |
 |2014-7-8 | Jimmy Kuu     | 200￥   | jimmy.kuu@gmail.com    |再接再厉，持续发展  |
 |2014-7-8 | 张仲东     | 100￥   | GoCMS作者    |支持XORM!!  |
 |2014-7-8 | wangwei     | 100￥   | iamjcww@gmail.com    |鄙视楼下  |
