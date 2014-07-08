@@ -27,6 +27,9 @@
 
 ### Donation Lists (descending by donating time)
 
-| Donated at       | Donator    | Amount   | Comments               |
-| ---------------- |:---------:| --------:| ----------------------- |
-|   |      |    |          |
+| Donated at       | Donator    | Amount   | Contact   | Comments               |
+| ---------------- |:---------:| --------:|:---------:| ----------------------- |
+|2014-7-8 | Jimmy Kuu     | 200￥   | jimmy.kuu@gmail.com    |再接再厉，持续发展  |
+|2014-7-8 | 张仲东     | 100￥   | GoCMS作者    |支持XORM!!  |
+|2014-7-8 | wangwei     | 100￥   | iamjcww@gmail.com    |鄙视楼下  |
+|2014-7-8 | Jazz     | 2￥   | 1002376560@qq.com    |这个沙发必须抢  |
