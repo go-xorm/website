@@ -23,11 +23,6 @@ import (
 	"github.com/go-xweb/xweb"
 )
 
-var (
-	AppVer string
-	IsPro  bool
-)
-
 var langTypes []*langType // Languages are supported.
 
 // langType represents a language type.
@@ -49,8 +44,6 @@ func (this *baseAction) Init() {
 
 	// Setting properties.
 	this.AddTmplVars(&xweb.T{
-		"AppVer":        AppVer,
-		"IsPro":         IsPro,
 		"PageStartTime": time.Now(),
 		"loadtimes": func() int64 {
 			return int64(time.Now().Sub(this.start) / time.Millisecond)

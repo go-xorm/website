@@ -15,7 +15,6 @@
 package actions
 
 import (
-	"fmt"
 	"github.com/go-xweb/xweb"
 
 	"github.com/go-xorm/website/models"
@@ -30,7 +29,6 @@ type DocsAction struct {
 
 // Get implemented Get method for DocsRouter.
 func (this *DocsAction) Get(link string) error {
-	fmt.Println("lang:", this.Lang)
 	dRoot := models.GetDocByLocale(this.Lang)
 	if dRoot == nil {
 		return this.NotFound("Not Found Your Language")
@@ -66,27 +64,3 @@ func (this *DocsAction) Get(link string) error {
 		"Data":    doc.GetContent(),
 	})
 }
-
-/*
-func DocsStatic(ctx *context.Context) {
-	if uri := ctx.Input.Params[":all"]; len(uri) > 0 {
-		lang := ctx.GetCookie("lang")
-		if !i18n.IsExist(lang) {
-			lang = "en-US"
-		}
-
-		f, err := os.Open("docs/images/" + uri)
-		if err != nil {
-			ctx.WriteString(err.Error())
-			return
-		}
-		defer f.Close()
-
-		_, err = io.Copy(ctx.ResponseWriter, f)
-		if err != nil {
-			ctx.WriteString(err.Error())
-			return
-		}
-	}
-}
-*/

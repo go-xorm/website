@@ -24,13 +24,14 @@
                     |
                     <!--<a href="/team"><strong>{{i18n .Lang "team"}}</strong></a>
                     |-->
-                    <a target="_blank" href="https://github.com/go-xorm" target="_blank"><strong><i class="icon-github-sign"></i> Github</strong></a>
-                    - {{loadtimes}}ms.
-                    <img src="https://travis-ci.org/go-xorm/xorm.svg">
+                    <a target="_blank" href="https://github.com/go-xorm/website" target="_blank"><strong><i class="icon-github-sign"></i> Github</strong></a>
+                    - {{loadtimes}}ms. | Based on 
+                    <a href="http://github.com/go-xweb/xweb">Xweb</a> v{{.T.XwebVer}}, <a href="http://golang.org">Golang</a> {{.T.GoVer}}
+                    | <img src="https://travis-ci.org/go-xorm/xorm.svg">
                 </p>
 
                 <p>
-                    {{i18n .Lang "copyright"}} © 2014 Xorm {{i18n .Lang "app_license"|Html}}
+                    {{i18n .Lang "copyright"}} © 2014 Xorm v{{.T.AppVer}} {{i18n .Lang "app_license"|Html}}
                 </p>
 
             </div>
