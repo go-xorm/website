@@ -32,7 +32,7 @@ func main() {
 
 	// Register routers.
 	xweb.AddAction(&actions.HomeAction{})
-	xweb.AutoAction(&actions.DocsAction{})
+	xweb.AutoAction(&actions.DocsAction{}, &actions.LinkAction{})
 	xweb.AddTmplVars(&xweb.T{
 		"i18n":    i18n.Tr,
 		"IsPro":   isPro,
