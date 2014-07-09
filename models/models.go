@@ -191,6 +191,9 @@ func initDocMap() {
 	for _, l := range langs {
 		os.Mkdir("docs/"+l, os.ModePerm)
 		for _, v := range docTree.Tree {
+			if v.Path == "" {
+				continue
+			}
 			var fullName string
 			if isConfExist {
 				fullName = v.Path
