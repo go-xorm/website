@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{{.Lang}}">
     <head>
     {{include "base/head.html"}}
     <title>{{i18n .Lang "homepage"}} - xorm: {{i18n .Lang "app_intro"}}</title>
@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/css/prettify.css" />
     <link rel="stylesheet" href="/css/select2.css" />
-
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/markdown.css">
     <link rel="stylesheet" href="/css/main.css">
@@ -54,9 +53,8 @@
                             <p>Xorm Tools Installation</p>
                             <p><code>go get github.com/go-xorm/cmd/xorm</code></p>
                             <p>Source Document</p>
-                            <p><code>go get github.com/go-xorm/xorm</code></p>
-                            <p>Xorm Tools Installation</p>
-                            <p><code>go get github.com/go-xorm/cmd/xorm</code></p>
+                            <p><a href="http://gowalker.org/github.com/go-xorm/xorm" target="_blank">gowalker.org/github.com/go-xorm/xorm</a></p>
+                            <p><a href="http://godoc.org/github.com/go-xorm/xorm" target="_blank">godoc.org/github.com/go-xorm/xorm</a></p>
                         {{end}}
                     </div>
                 </div>
@@ -202,7 +200,7 @@
         <div class="col-md-4">
             <h2>{{i18n .Lang "home.friends"}}</h2>
             <div class="whouse">
-                <a target="_blank" href="http://gogs.io/">Go Daily</a>
+                <a target="_blank" href="http://godaily.org/">Go Daily</a>
             </div>
         </div>
     </div>
