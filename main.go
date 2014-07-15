@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	APP_VER = "0.2.0708"
+	APP_VER = "0.2.0715"
 )
 
 func main() {
@@ -41,5 +41,11 @@ func main() {
 		"GoVer":   strings.Trim(runtime.Version(), "go"),
 	})
 	port, _ := models.Cfg.GetValue("app", "http_port")
-	xweb.Run(fmt.Sprintf(":%v", port))
+	usessl, _ := models.Cfg.GetValue("app", "ssl")
+	if usessl == "true" {
+		tlsCfg, _ := xweb.SimpleTLSConfig("cert.pem", "key.pem")
+		xweb.RunTLS(fmt.Sprintf(":%v", port), tlsCfg)
+	} else {
+		xweb.Run(fmt.Sprintf(":%v", port))
+	}
 }
