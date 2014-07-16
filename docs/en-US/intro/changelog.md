@@ -1,5 +1,5 @@
 ---
-name: Change Log
+name: Changelog
 sort: 1
 ---
 
