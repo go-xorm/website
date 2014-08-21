@@ -4,7 +4,7 @@ This manual documents aspects of Xorm.
 
 ### New to Xorm? 
 
-Read about the [Quick Start](quickstart).
+Read about the [Quick Start](docs/intro/quick_start.md).
 
 ### Can't find what you're looking for? 
 

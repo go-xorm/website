@@ -4,7 +4,7 @@
 
 ### 新手指导
 
-如果您是首次了解 Xorm，我们建议您先阅读 [快速入门](quickstart)。
+如果您是首次了解 Xorm，我们建议您先阅读 [快速入门](docs/intro/quick_start.md)。
 
 ### 其它资源
 
