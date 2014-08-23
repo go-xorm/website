@@ -74,7 +74,7 @@ xorm当前支持五种驱动四个数据库如下：
 
 * Postgres: [github.com/lib/pq](https://github.com/lib/pq)
 
-* MsSql: [github.com/lunny/godbc](https://githubcom/lunny/godbc)
+* MsSql: [github.com/lunny/godbc](https://github.com/lunny/godbc)
 
 NewEngine传入的参数和`sql.Open`传入的参数完全相同，因此，使用哪个驱动前，请查看此驱动中关于传入参数的说明文档。
 
