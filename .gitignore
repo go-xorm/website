@@ -11,3 +11,4 @@ productTree.json
 *.go~
 conf/custom.ini
 output*
+docs
