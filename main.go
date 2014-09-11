@@ -89,13 +89,16 @@ func updateDoc(tmpPath, dstpath string) {
 }
 
 func timeUpdate(tmpPath, dstpath string) {
-	time.AfterFunc(time.Minute, func() {
+	time.AfterFunc(5*time.Minute, func() {
 		updateDoc(tmpPath, dstpath)
 		timeUpdate(tmpPath, dstpath)
 	})
 }
 
 func main() {
+	updateDoc("./tmp", "./docs")
+	go timeUpdate("./tmp", "./docs")
+
 	models.InitModels()
 
 	mode, _ := models.Cfg.GetValue("app", "run_mode")
@@ -107,8 +110,6 @@ func main() {
 	log.Info("run in " + mode + " mode")
 
 	actions.InitApp()
-
-	go timeUpdate("./tmp", "./docs")
 
 	// Register routers.
 	xweb.AddAction(&actions.HomeAction{})
