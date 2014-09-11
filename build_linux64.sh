@@ -6,4 +6,3 @@ mv website ./output_linux_64/
 cp -r ./static/ ./output_linux_64/static/
 cp -r ./templates/ ./output_linux_64/templates/
 cp -r ./conf/ ./output_linux_64/conf/
-cp -r ./docs/ ./output_linux_64/docs/
