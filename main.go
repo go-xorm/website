@@ -22,7 +22,7 @@ import (
 )
 
 const (
-	APP_VER = "0.2.0715"
+	APP_VER = "0.3.0911"
 )
 
 func updateDoc(tmpPath, dstpath string) {
