@@ -3,14 +3,13 @@
     <head>
     {{include "base/head.html"}}
     <title>{{i18n .Lang "about"}} - xorm: {{i18n .Lang "app_intro"}}</title>
-
-    <link rel="stylesheet" href="/css/bootstrap.css">
+   <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.css" />
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="/css/prettify.css" />
-	<link rel="stylesheet" href="/css/select2.css" />
-
-	<link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/markdown.css">
+    <link rel="stylesheet" href="/css/prettify.css" />
+    <link rel="stylesheet" href="/css/select2.css" />
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/main.css">
     </head>
     <body>
 <div class="main-header">
@@ -20,13 +19,77 @@
 		<div class="col-md-12">
 			<div class="box">
 				<div class="cell slim page-box markdown">
-					<div class="page-header">
-					    <h1>
-					    	{{.T.Title}}
-					    	<a href="https://github.com/gogits/docs/blob/master/{{.Lang}}/{{.T.Section}}.md" class="pull-right btn btn-info" target="_blank">{{i18n .Lang "improve doc on github"}}</a>
-					    </h1>
-					</div>
-					{{.T.Data | Html}}
+					{{if eq .Lang "en-US"}}
+					<h1>
+<a name="user-content-about" class="anchor" href="#about" aria-hidden="true"><span class="octicon octicon-link"></span></a>About</h1>
+
+<p>This manual documents aspects of Xorm.</p>
+
+<h3>
+<a name="user-content-new-to-xorm" class="anchor" href="#new-to-xorm" aria-hidden="true"><span class="octicon octicon-link"></span></a>New to Xorm?</h3>
+
+<p>Read about the <a href="/go-xorm/xorm/blob/master/docs/en-US/docs/intro/quick_start.md">Quick Start</a>.</p>
+
+<h3>
+<a name="user-content-cant-find-what-youre-looking-for" class="anchor" href="#cant-find-what-youre-looking-for" aria-hidden="true"><span class="octicon octicon-link"></span></a>Can't find what you're looking for?</h3>
+
+<p>Search our <a href="https://groups.google.com/forum/#!forum/xorm">mailing list (xorm@googlegroups.com)</a>.</p>
+
+<h3>
+<a name="user-content-need-help" class="anchor" href="#need-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Need help?</h3>
+
+<p>Send an email to the <a href="mailto:xorm@googlegroups.com">xorm@googlegroups.com</a>.</p>
+
+<h3>
+<a name="user-content-find-a-bug" class="anchor" href="#find-a-bug" aria-hidden="true"><span class="octicon octicon-link"></span></a>Find a bug?</h3>
+
+<p>Open an <a href="https://github.com/go-xorm/xorm/issues">issue on github</a>.</p>
+
+<h3>
+<a name="user-content-want-to-be-a-contributor" class="anchor" href="#want-to-be-a-contributor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Want to be a contributor?</h3>
+
+<p>Fork the <a href="https://github.com/go-xorm/xorm/tree/master/docs">documentation project</a>, edit and pull request.</p>
+
+<h3>
+<a name="user-content-source-code-of-this-website" class="anchor" href="#source-code-of-this-website" aria-hidden="true"><span class="octicon octicon-link"></span></a>Source code of this website?</h3>
+
+<p>Please visit <a href="https://github.com/go-xorm/website">Xorm Web</a>.</p>
+					{{else}}
+					<h1>
+<a name="user-content-%E5%85%B3%E4%BA%8E" class="anchor" href="#%E5%85%B3%E4%BA%8E" aria-hidden="true"><span class="octicon octicon-link"></span></a>关于</h1>
+
+<p>本网站文档页面详细描述了 Xorm 的各个方面。</p>
+
+<h3>
+<a name="user-content-%E6%96%B0%E6%89%8B%E6%8C%87%E5%AF%BC" class="anchor" href="#%E6%96%B0%E6%89%8B%E6%8C%87%E5%AF%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>新手指导</h3>
+
+<p>如果您是首次了解 Xorm，我们建议您先阅读 <a href="/go-xorm/xorm/blob/master/docs/zh-CN/docs/intro/quick_start.md">快速入门</a>。</p>
+
+<h3>
+<a name="user-content-%E5%85%B6%E5%AE%83%E8%B5%84%E6%BA%90" class="anchor" href="#%E5%85%B6%E5%AE%83%E8%B5%84%E6%BA%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>其它资源</h3>
+
+<p>如果您无法找到相关问题的满意答案，可以在 <a href="https://groups.google.com/forum/#!search/xorm">邮件列表 (xorm@googlegroups.com)</a> 中搜索。</p>
+
+<h3>
+<a name="user-content-%E5%AF%BB%E6%B1%82%E5%B8%AE%E5%8A%A9" class="anchor" href="#%E5%AF%BB%E6%B1%82%E5%B8%AE%E5%8A%A9" aria-hidden="true"><span class="octicon octicon-link"></span></a>寻求帮助</h3>
+
+<p>如果您遇到无法解决的问题，可以发送邮件到 <a href="mailto:xorm@googlegroups.com">xorm@googlegroups.com</a> 提问。</p>
+
+<h3>
+<a name="user-content-%E9%97%AE%E9%A2%98%E6%8F%90%E4%BA%A4" class="anchor" href="#%E9%97%AE%E9%A2%98%E6%8F%90%E4%BA%A4" aria-hidden="true"><span class="octicon octicon-link"></span></a>问题提交</h3>
+
+<p>如果您在使用过程中发现 Xorm 有潜在的问题，请通过 <a href="https://github.com/go-xorm/xorm/issues">Xorm</a> 上的问题列表提交。</p>
+
+<h3>
+<a name="user-content-%E5%AE%8C%E5%96%84%E6%96%87%E6%A1%A3" class="anchor" href="#%E5%AE%8C%E5%96%84%E6%96%87%E6%A1%A3" aria-hidden="true"><span class="octicon octicon-link"></span></a>完善文档</h3>
+
+<p>您可以通过派生 <a href="https://github.com/go-xorm/xorm/tree/master/docs">文档项目</a>、编辑，然后提交合并请求。</p>
+
+<h3>
+<a name="user-content-%E7%BD%91%E7%AB%99%E6%BA%90%E7%A0%81" class="anchor" href="#%E7%BD%91%E7%AB%99%E6%BA%90%E7%A0%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>网站源码</h3>
+
+<p>请移步 <a href="https://github.com/go-xorm/website">Xorm Web</a>。</p>
+					{{end}}
 				</div>
 			</div>
 		</div>

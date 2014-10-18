@@ -1,18 +1,9 @@
 package main
 
 import (
-	"archive/zip"
-	"bytes"
 	"fmt"
-	"io"
-	"io/ioutil"
-	"net/http"
-	"os"
-	"path/filepath"
 	"runtime"
 	"strings"
-	"time"
-
 	"github.com/Unknwon/i18n"
 	"github.com/go-xweb/log"
 	"github.com/go-xweb/xweb"
@@ -22,83 +13,10 @@ import (
 )
 
 const (
-	APP_VER = "0.3.0911"
+	APP_VER = "0.4.1019"
 )
 
-func updateDoc(tmpPath, dstpath string) {
-	os.RemoveAll(tmpPath)
-	os.MkdirAll(tmpPath, os.ModePerm)
-
-	resp, err := http.Get("https://github.com/go-xorm/xorm/archive/master.zip")
-	if err != nil {
-		log.Warn("download docs failed")
-		return
-	}
-
-	bs, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Warn("read zip docs failed")
-		return
-	}
-
-	zrd, err := zip.NewReader(bytes.NewReader(bs), int64(len(bs)))
-	if err != nil {
-		log.Warn("open zip docs failed")
-		return
-	}
-
-	for _, f := range zrd.File {
-		if !strings.HasPrefix(f.Name, "xorm-master/docs") {
-			continue
-		}
-
-		fPath := filepath.Join(tmpPath, f.Name)
-		os.MkdirAll(filepath.Dir(fPath), os.ModePerm)
-		fInfo := f.FileInfo()
-		if fInfo.IsDir() {
-			os.MkdirAll(fPath, os.ModePerm)
-			continue
-		}
-
-		ff, err := os.Create(fPath)
-		if err != nil {
-			log.Warnf("create file %s failed", f.Name)
-			return
-		}
-		defer ff.Close()
-
-		rd, err := f.Open()
-		if err != nil {
-			log.Warnf("open zip file %s failed", f.Name)
-			return
-		}
-
-		_, err = io.Copy(ff, rd)
-		if err != nil {
-			log.Warnf("unzip file %s failed", f.Name)
-			return
-		}
-	}
-
-	os.RemoveAll(dstpath)
-
-	err = os.Rename(filepath.Join(tmpPath, "xorm-master/docs"), dstpath)
-	if err != nil {
-		log.Warnf("move docs from %s to %s failed", filepath.Join(tmpPath, "xorm-master/docs"), dstpath)
-	}
-}
-
-func timeUpdate(tmpPath, dstpath string) {
-	time.AfterFunc(5*time.Minute, func() {
-		updateDoc(tmpPath, dstpath)
-		timeUpdate(tmpPath, dstpath)
-	})
-}
-
 func main() {
-	updateDoc("./tmp", "./docs")
-	go timeUpdate("./tmp", "./docs")
-
 	models.InitModels()
 
 	mode, _ := models.Cfg.GetValue("app", "run_mode")

@@ -16,55 +16,9 @@
     <body id="front">
 <div id="wrapper">
 {{include "base/navbar.html"}}
-{{define "docs"}}
-    {{with .Doc}}
-        {{range .Docs}}
-            <ul class="list-unstyled">
-                {{if .Name}}
-                    {{ if .IsDir}}
-                        <li class="group">
-                            <div class="section">
-                            {{if .HasContent}}
-                                <a class="{{if eq $.root.T.Doc.Link .Link}}active{{end}} item" href="/docs/{{.Link}}">{{.Name}}</a>
-                            {{else}}
-                                {{.Name}}
-                            {{end}}
-                            </div>
-                            {{template "docs" dict "root" $.root "Doc" .}}
-                        </li>
-                    {{else}}
-                        <li><a class="{{if eq $.root.T.Doc.Link .Link}}active{{end}} item" href="/docs/{{.Link}}">{{.Name}}</a></li>
-                    {{end}}
-                {{end}}
-            </ul>
-        {{end}}
-    {{end}}
-{{end}}
 <div id="main">
 <div class="container main-container">
-    <div class="row">
-        <div class="col-md-2 col-sm-3">
-            <div id="docs-collapse" class="collapse navbar-collapse docs-sidenav">
-                {{with .T.DocRoot.Doc}}
-                    {{if .HasContent}}
-                        <div class="section"><a class="{{if eq $.T.Doc.Link .Link}}active{{end}} item" href="/docs">{{.Name}}</a></div>
-                    {{end}}
-                    {{template "docs" dict "root" $ "Doc" .}}
-                {{end}}
-            </div>
-        </div>
-        <div class="col-md-10 col-sm-9">
-            <div class="box">
-                <div class="cell slim page-box">
-                    <p>
-                        <a href="https://github.com/go-xorm/xorm/blob/master/docs/{{.Lang}}/{{if .T.Doc.IsDir}}{{.T.Doc.FileRelPath}}{{else}}{{.T.Doc.RelPath}}{{end}}" class="pull-right btn btn-info" target="_blank">{{i18n .Lang "improve doc on github"}}</a>
-                        <span class="clearfix"></span>
-                    </p>
-                    <div class="markdown docs-markdown">
-                        {{.T.Data|Html}}
-                    </div>
-                </div>
-            </div>
+    <iframe frameBorder=0 marginwidth=0 marginheight=0 src="http://lunny.gitbooks.io/xorm-manual-{{.Lang}}/content/" style="width:100%;height:1500px;"></iframe>
             {{include "base/disqus.html"}}
         </div>
     </div>

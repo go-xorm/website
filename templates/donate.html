@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/css/prettify.css" />
     <link rel="stylesheet" href="/css/select2.css" />
-
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/markdown.css">
     <link rel="stylesheet" href="/css/main.css">
@@ -22,10 +21,133 @@
 		<div class="col-md-12">
 			<div class="box">
 				<div class="cell slim page-box markdown">
-					<div class="page-header">
-	   				<h1>{{.T.Title}}</h1>
-					</div>
-					{{.T.Data | Html}}
+                {{if eq .Lang "en-US"}}
+					<h1>
+<a name="user-content-donation" class="anchor" href="#donation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donation</h1>
+
+<h4>
+<a name="user-content-----we-will-continue-hard-working-with-your-huge-support" class="anchor" href="#----we-will-continue-hard-working-with-your-huge-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+    <b>We will continue hard working with your huge support!</b>
+</h4>
+
+<h4>
+<a name="user-content-----donate-by-paypal----" class="anchor" href="#----donate-by-paypal----" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+    <b>Donate by Paypal:</b>
+    </h4><p>
+        
+    </p>
+
+
+<h3>
+<a name="user-content-your-donation-will-be-used-as" class="anchor" href="#your-donation-will-be-used-as" aria-hidden="true"><span class="octicon octicon-link"></span></a>Your donation will be used as:</h3>
+
+<ul class="task-list">
+<li>Supports the development of Beego</li>
+<li>Supports maintaining the communities</li>
+<li>Upgrade to better server</li>
+<li>Award the outstanding contributors</li>
+<li>Holds community activities and lectures</li>
+</ul>
+
+{{else}}
+<h1>
+<a name="user-content-%E6%8D%90%E8%B5%A0%E6%88%91%E4%BB%AC" class="anchor" href="#%E6%8D%90%E8%B5%A0%E6%88%91%E4%BB%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>捐赠我们</h1>
+
+<h4>
+<a name="user-content-----%E5%9C%A8%E6%82%A8%E7%9A%84%E6%94%AF%E6%8C%81%E4%B8%8E%E9%BC%93%E5%8A%B1%E4%B8%8Bxorm-%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9F%E5%B0%86%E4%BC%9A%E6%9B%B4%E5%8A%A0%E5%8A%AA%E5%8A%9B%E5%9C%B0%E5%BC%80%E5%8F%91%E5%87%BA%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81" class="anchor" href="#----%E5%9C%A8%E6%82%A8%E7%9A%84%E6%94%AF%E6%8C%81%E4%B8%8E%E9%BC%93%E5%8A%B1%E4%B8%8Bxorm-%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9F%E5%B0%86%E4%BC%9A%E6%9B%B4%E5%8A%A0%E5%8A%AA%E5%8A%9B%E5%9C%B0%E5%BC%80%E5%8F%91%E5%87%BA%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+    <b>在您的支持与鼓励下，Xorm 开发团队将会更加努力地开发出更好的产品！</b>
+</h4>
+
+<h4>
+<a name="user-content---------%E6%94%AF%E4%BB%98%E5%AE%9D%E6%8D%90%E8%B5%A0" class="anchor" href="#--------%E6%94%AF%E4%BB%98%E5%AE%9D%E6%8D%90%E8%B5%A0" aria-hidden="true"><span class="octicon octicon-link"></span></a>    
+    <b>支付宝捐赠</b>：
+</h4>
+
+<p><a href="/go-xorm/xorm/blob/master/img/alipay.png" target="_blank"><img src="/go-xorm/xorm/raw/master/img/alipay.png" style="max-width:100%;"></a></p>
+
+<h4>
+<a name="user-content---------paypal-%E6%8D%90%E8%B5%A0----" class="anchor" href="#--------paypal-%E6%8D%90%E8%B5%A0----" aria-hidden="true"><span class="octicon octicon-link"></span></a>    
+    <b>Paypal 捐赠</b>
+    </h4><p>
+        
+    </p>
+<h3>
+<a name="user-content-%E6%82%A8%E7%9A%84%E6%8D%90%E8%B5%A0%E5%B0%86%E8%A2%AB%E7%94%A8%E4%BA%8E" class="anchor" href="#%E6%82%A8%E7%9A%84%E6%8D%90%E8%B5%A0%E5%B0%86%E8%A2%AB%E7%94%A8%E4%BA%8E" aria-hidden="true"><span class="octicon octicon-link"></span></a>您的捐赠将被用于：</h3>
+
+<ul class="task-list">
+<li>持续和深入的开发</li>
+<li>维护社区的运行稳定</li>
+<li>租用更好的带宽</li>
+<li>奖励团队的杰出贡献者</li>
+<li>社区活动或讲座</li>
+</ul>
+{{end}}
+
+<h3>
+<a name="user-content-donation-lists-descending-by-donating-time" class="anchor" href="#donation-lists-descending-by-donating-time" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donation Lists (descending by donating time)</h3>
+
+<table>
+<thead>
+<tr>
+<th>Donated at</th>
+<th align="center">Donator</th>
+<th align="right">Amount</th>
+<th align="center">Contact</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2014-7-8</td>
+<td align="center">Steven Wang</td>
+<td align="right">100￥</td>
+<td align="center"><a href="mailto:easykooc@gmail.com">easykooc@gmail.com</a></td>
+<td>xorm目前做得最好的orm for golang</td>
+</tr>
+<tr>
+<td>2014-7-8</td>
+<td align="center">韩天峰</td>
+<td align="right">20￥</td>
+<td align="center"><a href="mailto:apolov@vip.qq.com">apolov@vip.qq.com</a></td>
+<td>xorm是Golang里最好用的DB库</td>
+</tr>
+<tr>
+<td>2014-7-8</td>
+<td align="center">sunhongjian</td>
+<td align="right">100￥</td>
+<td align="center"><a href="mailto:shongjiang@gmail.com">shongjiang@gmail.com</a></td>
+<td>支持开源，支持美好的事物！</td>
+</tr>
+<tr>
+<td>2014-7-8</td>
+<td align="center">Jimmy Kuu</td>
+<td align="right">200￥</td>
+<td align="center"><a href="mailto:jimmy.kuu@gmail.com">jimmy.kuu@gmail.com</a></td>
+<td>再接再厉，持续发展</td>
+</tr>
+<tr>
+<td>2014-7-8</td>
+<td align="center">张仲东</td>
+<td align="right">100￥</td>
+<td align="center">GoCMS作者</td>
+<td>支持XORM!!</td>
+</tr>
+<tr>
+<td>2014-7-8</td>
+<td align="center">wangwei</td>
+<td align="right">100￥</td>
+<td align="center"><a href="mailto:iamjcww@gmail.com">iamjcww@gmail.com</a></td>
+<td>鄙视楼下</td>
+</tr>
+<tr>
+<td>2014-7-8</td>
+<td align="center">Jazz</td>
+<td align="right">2￥</td>
+<td align="center"><a href="mailto:1002376560@qq.com">1002376560@qq.com</a></td>
+<td>这个沙发必须抢</td>
+</tr>
+</tbody>
+</table>
 				</div>
 			</div>
 		</div>

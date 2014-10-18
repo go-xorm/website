@@ -1,9 +1,8 @@
 package actions
 
-import
-
-// DocsRouter serves about page.
-"github.com/go-xweb/xweb"
+import (
+	"github.com/go-xweb/xweb"
+)
 
 type LinkAction struct {
 	baseAction
