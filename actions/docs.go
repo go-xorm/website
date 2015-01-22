@@ -1,6 +1,10 @@
 package actions
 
-import "github.com/go-xweb/xweb"
+import (
+	"strings"
+
+	"github.com/go-xweb/xweb"
+)
 
 // DocsRouter serves about page.
 type DocsAction struct {
@@ -9,9 +13,14 @@ type DocsAction struct {
 	get xweb.Mapper `xweb:"/"`
 }
 
+func toLower(l string) string {
+	return strings.ToLower(l)
+}
+
 // Get implemented Get method for DocsRouter.
 func (this *DocsAction) Get() error {
 	return this.Render("docs.html", &xweb.T{
-		"IsDocs": true,
+		"IsDocs":  true,
+		"toLower": toLower,
 	})
 }
