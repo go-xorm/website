@@ -12,3 +12,4 @@ productTree.json
 conf/custom.ini
 output*
 docs
+*.log

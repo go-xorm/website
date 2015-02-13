@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+	"io"
+	"os"
 	"runtime"
 	"strings"
+
 	"github.com/Unknwon/i18n"
 	"github.com/go-xweb/log"
 	"github.com/go-xweb/xweb"
@@ -13,7 +16,7 @@ import (
 )
 
 const (
-	APP_VER = "0.4.1019"
+	APP_VER = "0.4.0213"
 )
 
 func main() {
@@ -26,6 +29,14 @@ func main() {
 		isPro = false
 	}
 	log.Info("run in " + mode + " mode")
+	f, err := os.Create("./website.log")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	log.SetOutput(io.MultiWriter(f, os.Stdout))
+	xweb.SetLogger(log.Std)
 
 	actions.InitApp()
 
