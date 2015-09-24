@@ -20,6 +20,23 @@ const (
 )
 
 func main() {
+	defer func() {
+		if res := recover(); res != nil {
+			content := fmt.Sprintf("Crashed with error: %v", res)
+			for i := 1; ; i += 1 {
+				_, file, line, ok := runtime.Caller(i)
+				if !ok {
+					break
+				} else {
+					content += "\n"
+				}
+				content += fmt.Sprintf("%v %v", file, line)
+			}
+
+			fmt.Println(content)
+		}
+	}()
+
 	models.InitModels()
 
 	mode, _ := models.Cfg.GetValue("app", "run_mode")
